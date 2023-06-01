@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+
+:root{
+    /* Primary */
+--Blue: hsl(246, 80%, 60%);
+--Light-red-work: hsl(15, 100%, 70%);
+--Soft-blue-play: hsl(195, 74%, 62%);
+--Light-red-study: hsl(348, 100%, 68%);
+--Lime-green-exercise: hsl(145, 58%, 55%);
+--Violet-social: hsl(264, 64%, 52%);
+--Soft-orange-self-care: hsl(43, 84%, 65%);
+
+/* Nuetral */
+--Very-dark-blue: hsl(226, 43%, 10%);
+--Dark-blue: hsl(235, 46%, 20%);
+--Desaturated-blue: hsl(235, 45%, 61%);
+--Pale-Blue: hsl(236, 100%, 87%);
+--White : #fff;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    background: var(--Very-dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-weight: 300;
+    overflow: hidden;
+}
+
+.dashboard{
+   display: flex; 
+   gap: 1rem;
+}
+
+.profileBox{
+    display: flex;
+    flex-direction: column;
+    background: var(--Dark-blue);
+    border-radius: 15px;
+    height: 29rem;
+    width: 14rem;
+    z-index: 10;
+}
+
+.profileCard{
+    display: flex;
+    flex-direction: column; 
+    border-radius: 1rem;
+    justify-content: flex-start;
+    background: var(--Blue);
+    height: 14.5rem;
+    z-index: 0;
+    padding: 2rem;
+}
+
+.profileCard img{
+    width: 4.5rem;
+    padding: 2px;
+    background: var(--White);
+    border-radius: 50%;
+}
+
+.profileDetails{
+    margin-top: 2rem;
+}
+.profileDetails small{
+    color: var(--Pale-Blue);
+}
+
+.profileCard p {
+    font-size: 2.5rem;
+    color: var(--White);
+    margin: 0;
+}
+.profileActivity{
+    display: flex;
+    flex-direction: column;
+    height: 8.5rem;
+    background: var(--Dark-blue);
+    padding: 2rem 2rem 1rem;
+    margin-top: -1rem;
+    border-radius: 1rem;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+}
+
+.profileActivity p{
+    font-size: 13px;
+    margin: 10px 0;
+    color: var(--Pale-Blue);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profileActivity p:hover{
+    color: var(--White);
+}
+
+.dashboardActivity{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.card{
+    width: 14rem;
+    height: 14rem;
+    border-radius: 1.2rem;
+    z-index: 10;
+}
+
+.work {
+    background: var(--Light-red-work);
+}
+.play {
+    background: var(--Soft-blue-play);
+}
+.study {
+    background: var(--Light-red-study);
+}
+.exercise {
+    background: var(--Lime-green-exercise);
+}
+.social {
+    background: var(--Violet-social);
+}
+.selfcare {
+    background: var(--Soft-orange-self-care);
+}
+
+
+.imgBox{
+    height: 2rem;
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+}   
+
+.imgBox img{
+    margin-top: -0.7rem;
+    width: 4rem;
+    margin-right: 1rem;
+}
+
+.content{
+    background: var(--Dark-blue);
+    height: 10rem;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.content:hover{
+    background: var(--Desaturated-blue);
+}
+
+.content .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--White);
+}
+.content .header small{
+    font-size: 16px;
+}
+
+.content .activity p{
+    color: var(--White);
+    margin: 0;
+    font-size: 3rem;
+}
+
+.content .activity small{
+    color: var(--Pale-Blue);
+    font-size: 13px;
+}
+
+.header img{
+  transition: 0.1s;  
+  cursor: pointer;
+}
+.header img:hover{
+    filter: brightness(5);
+}
+
+.daily.active{
+    color: var(--White);
+}
+.weekly.active{
+    color: var(--White);
+}
+.monthly.active{
+    color: var(--White);
+}
+
+/* =================================FOR SMALLER SCREEN================================== */
+@media (max-width: 600px) {
+    
+    body{
+        width: 100vw;
+        overflow: auto;
+        padding: 2rem;
+    }
+
+    .dashboard{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+     }
+
+     .dashboardActivity{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+   
+    .profileCard{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        gap: 1rem;
+    }
+
+    .profileDetails{
+        margin: 0;
+    }
+
+    .profileCard img{
+        width: 70px;
+    }
+
+    .profileActivity{
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        height: fit-content;
+    }
+
+    .profileBox{
+        width: 100vw;
+        height: fit-content;
+    }
+
+    .card{
+        width: 100vw;
+        height: fit-content;
+    }
+    .activity{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .content{
+        height: fit-content;
+        padding: 2rem;
+    }
+
+}
